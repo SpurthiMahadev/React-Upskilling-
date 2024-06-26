@@ -1,3 +1,5 @@
+// Method 1 - 0(n^2)
+
 const uniqueValues = (strg) => {
   let data = strg.split('')
   let newValues = []
@@ -13,3 +15,18 @@ const uniqueValues = (strg) => {
 let str = 'radar'
 
 console.log(uniqueValues(str))
+
+
+//Method 2: 0(n)
+const uniqueValues = (strg) => {
+  const uniqueChars = new Set();
+  for (const char of strg) {
+    uniqueChars.add(char);
+  }
+  return [...uniqueChars].join('');
+}
+
+let str = 'radar';
+
+console.log(uniqueValues(str));
+
