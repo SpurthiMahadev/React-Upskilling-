@@ -1,0 +1,15 @@
+const uniqueValues = (strg) => {
+  let data = strg.split('')
+  let newValues = []
+
+  data.forEach((item, index) => {
+    if (data.indexOf(item) === index) {
+      newValues.push(item)
+    }
+  }) 
+  return newValues.join('')
+}
+
+let str = 'radar'
+
+console.log(uniqueValues(str))
