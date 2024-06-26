@@ -1,0 +1,5 @@
+//Find the square root of 80 and output should be lowest whole number if it's decimal
+
+let input = 80;
+let result = Math.floor(Math.sqrt(input));
+console.log(result);
