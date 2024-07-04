@@ -1,0 +1,18 @@
+let numbers = [1,2,2,3,4,5,5,6]
+
+const findDuplicate = (nums) => {
+let duplicates  = new Set()
+nums.filter((item, index) => {
+if(duplicates.has(item)){
+return true
+} else {
+duplicates.add(item)
+return false
+}
+
+})
+return Array.from(duplicates)
+}
+
+console.log(findDuplicate(numbers))
+
