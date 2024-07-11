@@ -1,0 +1,7 @@
+// Can you turn the array [1,2,3,4,5] into this object: {1: 2, 3: 4, 5: undefined}?
+  let arr=[1,2,3,4,5];
+  let obj={}
+  for(let i=0;i<=arr.length;i+=2){
+       obj[arr[i]]=arr[i+1];
+  }
+  console.log(obj)
