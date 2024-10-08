@@ -1,0 +1,61 @@
+import React, { useState } from 'react';
+
+const withCounter = (WrappedComponent) => {
+    return function CounterHOC(props) {
+        const [count, setCount] = useState(0);
+
+        const incrementCount = () => {
+            setCount(prevCount => prevCount + 1);
+        };
+
+        return <WrappedComponent count={count} incrementCount={incrementCount} {...props} />;
+    };
+};
+
+export default withCounter;
+
+
+import React from 'react';
+import withCounter from './withCounter'; // Adjust the path as necessary
+
+const ButtonCounter = ({ count, incrementCount }) => {
+    return (
+        <div>
+            <button onClick={incrementCount}>Click Me!</button>
+            <p>Button clicked {count} times</p>
+        </div>
+    );
+};
+
+export default withCounter(ButtonCounter);
+
+
+import React from 'react';
+import withCounter from './withCounter'; // Adjust the path as necessary
+
+const MouseoverCounter = ({ count, incrementCount }) => {
+    return (
+        <div onMouseOver={incrementCount} style={{ padding: '20px', border: '1px solid black' }}>
+            <p>Hover over this box!</p>
+            <p>Hovered {count} times</p>
+        </div>
+    );
+};
+
+export default withCounter(MouseoverCounter);
+
+import React from 'react';
+import ButtonCounter from './ButtonCounter'; // Adjust the path as necessary
+import MouseoverCounter from './MouseoverCounter'; // Adjust the path as necessary
+
+const App = () => {
+    return (
+        <div>
+            <h1>Counter Example</h1>
+            <ButtonCounter />
+            <MouseoverCounter />
+        </div>
+    );
+};
+
+export default App;
