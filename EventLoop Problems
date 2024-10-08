@@ -1,0 +1,17 @@
+console.log("Start")
+
+setTimeout(() => {
+  console.log("Timer")
+}, 0)
+
+Promise.resolve("Resolved").then((res) => console.log(res))
+
+setTimeout(() => {
+  console.log("Timer 20")
+}, 20)
+
+setImmediate(() => console.log("SetImmediate"))
+
+console.log("Completed")
+
+process.nextTick(() => console.log("Next Tick"))
