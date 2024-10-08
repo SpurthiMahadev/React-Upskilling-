@@ -1,0 +1,10 @@
+const str = 'AB_12_CD_23_EF_20';
+
+const data = str.match(/\d+/g);
+
+console.log(data)
+const sum = data.reduce((acc, num) => {
+return acc + parseInt(num, 10)
+}, 0)
+
+console.log(sum)
