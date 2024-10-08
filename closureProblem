@@ -1,0 +1,17 @@
+//const fn  = doSomething(100)
+//fn(200) // o/p- 200
+//fn(400) // o/p- 400
+
+const doSomething = (input) => {
+const innerFunc = (data) => {
+return data
+}
+
+return innerFunc
+}
+
+const fn  = doSomething(100)
+
+console.log(fn(200)) // o/p- 200
+
+console.log(fn(400)) // o/p- 400
